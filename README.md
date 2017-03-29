@@ -6,6 +6,7 @@ Questions:
 
 1. What is currying?
 2. What is partial application?
+3. [What is the difference between curry and partial application?](https://medium.com/javascript-scene/curry-or-partial-application-8150044c78b8)
 3. What is point-free style?
 4. What is template literal syntax?
 5. How does currying help with function composition?
@@ -16,6 +17,8 @@ Questions:
 add2(a) => (b) => Number
 ```
 
+> Question: What does it mean to curry a function?
+
 Given two numbers, `a` and `b` in curried form, return a `Number` which is the sum of `a` and `b`.
 
 ### Usage
@@ -24,15 +27,55 @@ Given two numbers, `a` and `b` in curried form, return a `Number` which is the s
 add2(2)(3); // 5
 ```
 
+## add3 (partially applied / autocurried)
+
+```js
+add3(a) => b => c => Number
+```
+
+> Questions:
+> 1. What is partial application?
+> 1. What is the difference between curry and partial application?
+
+Given 3 numbers, curried or partially applied, return the sum of all 3 numbers.
+
+Lodash and Ramda both supply curry functions that create auto-curried functions. Here's a function you can use to create `add3`:
+
+```
+// Tiny, recursive autocurry
+const curry = (
+  f, arr = []
+) => (...args) => (
+  a => a.length === f.length ?
+    f(...a) :
+    curry(f, a)
+)([...arr, ...args]);
+```
+
+This curry utility takes a function that takes any number of arguments and returns a function that will curry or partially apply as necessary depending on how many arguments you pass in to the returned function.
+
+
+### Usage
+
+```js
+add3(1, 2, 3); // 6
+add3(1, 2)(3); // 6
+add3(1)(2, 3); // 6
+add3(1)(2)(3); // 6
+```
+
+
 ## inc (from add2)
 
 ```js
 inc(n) => Number
 ```
 
-Use `add2()` to create a new function that adds 1 to any number. Your function should not have a reference to its argument in the function definition. In other words, it should be written in **point free** style.
+> Question: What is point-free style?
 
-Write the function without using any of the following: `=>`, `function`, `Function`, `eval`.
+Use `add2()` to create a new function that adds 1 to any number.
+
+Your function should not have a reference to its argument in the function definition. In other words, it should be written in **point free** style. Write the function without using any of the following: `=>`, `function`, `Function`, `eval`.
 
 ### Usage
 
@@ -46,6 +89,8 @@ inc(3); // 4
 ```js
 trace(label: s) => (value: v) => Void, effects(log to console)
 ```
+
+> Question: What is template literal syntax?
 
 Given a `label` and a `value` in curried form, log a message to the console using template literal notation:
 
@@ -85,6 +130,8 @@ meaning(20); // 42
 ```js
 compose(...fns: [...Functions]) => Function
 ```
+
+> Question: How does currying help with function composition?
 
 Given any number of functions, `fns`, e.g., `f`, `g`, `h`, etc..., return a new function representing the composition of all given functions from right to left. In other words, `compose(f, g, h)` represents the composition `f ∘ g ∘ h`.
 
