@@ -1,4 +1,4 @@
-# ES6 Curry
+# ES6 Curry and Function Composition
 
 Currying in ES6: Exercises.
 
@@ -97,6 +97,31 @@ const composed = compose(
   g,
   trace('after g')
 );
+
+composed(20); // 42
 ```
 
 > Hint: You can use a reducer function, but `Array.prototype.reduce()` probably won't give you what you need. Is there another form of reduce you can use?
+
+### pipe
+
+Pipe is exactly like compose, but instead of working from right to left, it works left to right.
+
+```js
+pipe(...fns: [...Functions]) => Function
+```
+
+Given any number of functions, `fns`, e.g., `f`, `g`, `h`, etc..., return a new function representing the composition of all given functions from left to right. In other words, `pipe(f, g, h)` represents the composition `h ∘ g ∘ f`.
+
+### Usage
+
+```js
+const piped = pipe(
+  f,
+  trace('after f'),
+  g,
+  trace('after g')
+);
+
+piped(20); // 41
+```
