@@ -87,7 +87,7 @@ inc(3); // 4
 ## trace
 
 ```js
-trace(label: s) => (value: v) => Void, effects(log to console)
+trace(label: s) => (value: v) => v, effects(log to console)
 ```
 
 Given a `label` and a `value` in curried form, log a message to the console using template literal notation:
