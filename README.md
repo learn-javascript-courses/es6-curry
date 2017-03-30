@@ -14,7 +14,7 @@ Questions:
 ## add2 (curried)
 
 ```js
-add2(a) => (b) => Number
+add2(a) => b => Number
 ```
 
 > Question: What does it mean to curry a function?
