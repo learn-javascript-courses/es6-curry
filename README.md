@@ -8,7 +8,8 @@ Questions:
 2. What is partial application?
 3. [What is the difference between curry and partial application?](https://medium.com/javascript-scene/curry-or-partial-application-8150044c78b8)
 3. What is point-free style?
-4. How does currying help with function composition?
+4. What is function composition?
+5. How does currying help with function composition?
 
 ## add2 (curried)
 
@@ -106,6 +107,8 @@ trace('inc')(inc(3)); // inc: 4
 ```js
 compose(f: Function, g: Function) => Function
 ```
+
+> Question: What is function composition?
 
 Given two functions, `f` and `g`, return a new function representing the composition: `f ∘ g` (`f` *after* `g`).
 
