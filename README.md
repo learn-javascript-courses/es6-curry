@@ -8,8 +8,7 @@ Questions:
 2. What is partial application?
 3. [What is the difference between curry and partial application?](https://medium.com/javascript-scene/curry-or-partial-application-8150044c78b8)
 3. What is point-free style?
-4. What is template literal syntax?
-5. How does currying help with function composition?
+4. How does currying help with function composition?
 
 ## add2 (curried)
 
@@ -89,8 +88,6 @@ inc(3); // 4
 ```js
 trace(label: s) => (value: v) => Void, effects(log to console)
 ```
-
-> Question: What is template literal syntax?
 
 Given a `label` and a `value` in curried form, log a message to the console using template literal notation:
 
