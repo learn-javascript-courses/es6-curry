@@ -139,10 +139,10 @@ Given any number of functions, `fns`, e.g., `f`, `g`, `h`, etc..., return a new 
 
 ```js
 const composed = compose(
-  f,
   trace('after f'),
-  g,
-  trace('after g')
+  f,
+  trace('after g'),
+  g
 );
 
 composed(20); // 42
