@@ -155,7 +155,7 @@ composed(20); // 42
 Pipe is exactly like compose, but instead of working from right to left, it works left to right.
 
 ```js
-pipe(...fns: [...Functions]) => Function
+pipe(...fns: [...Function]) => Function
 ```
 
 Given any number of functions, `fns`, e.g., `f`, `g`, `h`, etc..., return a new function representing the composition of all given functions from left to right. In other words, `pipe(f, g, h)` represents the composition `h ∘ g ∘ f`.
