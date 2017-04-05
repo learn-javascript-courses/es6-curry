@@ -7,6 +7,7 @@ import { inc } from './index';
 import { compose2 } from './index';
 import { trace } from './index';
 import { compose } from './index';
+import { pipe } from './index';
 
 // What is currying?
 // add2(a) => b => Number
@@ -77,7 +78,7 @@ test('trace(label) => v => v, effects(log to console)', assert => {
 
 // How does currying help with function composition?
 // compose(...fns: [...Functions]) => Function
-test('compose(...fns: [...Functions]) => Function', assert => {
+test('compose(...fns: [...Function]) => Function', assert => {
   const msg = 'should take any number of functions and return their composition';
 
   const g = n => n + 1;
@@ -92,6 +93,24 @@ test('compose(...fns: [...Functions]) => Function', assert => {
 
   const actual = h(20);
   const expected = 42;
+
+  assert.same(actual, expected, msg);
+  assert.end();
+});
+
+test('pipe(...fns: [...Function]) => Function', assert => {
+  const msg = 'should take any number of functions and return their composition';
+
+  const g = n => n + 1;
+  const f = n => n * 2;
+
+  const h = pipe(
+    f,
+    g
+  );
+
+  const actual = h(20);
+  const expected = 41;
 
   assert.same(actual, expected, msg);
   assert.end();
