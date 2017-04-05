@@ -1,6 +1,6 @@
 {
   "name": "es6-curry",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Currying in ES6: Exercises.",
   "main": "index.js",
   "scripts": {
