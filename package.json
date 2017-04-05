@@ -1,0 +1,30 @@
+{
+  "name": "es6-curry",
+  "version": "1.0.0",
+  "description": "Currying in ES6: Exercises.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint source",
+    "test": "babel-node source/test.js",
+    "watch": "watch 'clear && npm run -s lint && npm run -s test' source"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/learn-javascript-courses/es6-curry.git"
+  },
+  "author": "Eric Elliott",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/learn-javascript-courses/es6-curry/issues"
+  },
+  "homepage": "https://github.com/learn-javascript-courses/es6-curry#readme",
+  "devDependencies": {
+    "babel-cli": "6.24.0",
+    "babel-preset-es2015": "6.24.0",
+    "babel-preset-node6": "11.0.0",
+    "babel-preset-stage-2": "6.22.0",
+    "eslint": "3.18.0",
+    "tape": "4.6.3",
+    "watch": "1.0.2"
+  }
+}
