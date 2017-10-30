@@ -1,8 +1,9 @@
 // Tiny, recursive autocurry
 const curry = (
-  f, arr = []
+  f, arr = [],
+  length = f.length
 ) => (...args) => (
-  a => a.length === f.length ?
+  a => a.length === length ?
     f(...a) :
     curry(f, a)
 )([...arr, ...args]);
