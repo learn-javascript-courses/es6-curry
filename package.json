@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint source",
-    "test": "node -r @std/esm source/test.js",
+    "test": "node -r esm source/test.js",
     "watch": "watch 'clear && npm run -s lint && npm run -s test' source"
   },
   "repository": {
@@ -24,9 +24,6 @@
     "watch": "1.0.2"
   },
   "dependencies": {
-    "@std/esm": "0.12.5"
-  },
-  "@std/esm": {
-    "esm": "js"
+    "esm": "^3.2.22"
   }
 }
